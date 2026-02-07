@@ -33,7 +33,7 @@ body{
 
 header{
   background-color: var(--back-color);
-  padding: 50px 0;
+  padding: 50px 100px;
   margin-bottom: 100px;
 }
 
@@ -42,18 +42,21 @@ h1{
 }
 
 .presentation{
+  display: flex;
   margin: auto;
   width: fit-content;
+  align-items: center;
 }
 
 .portrait{
+  float: left;
+  width: 350px;
   position: relative;
-  width: 500px;
   height: fit-content;
 }
 
 .portrait > img{
-  width: 100%;
+  width: 350px;
   border-radius: 10px;
 }
 
@@ -78,13 +81,13 @@ h1{
 
 main{
   flex-direction: column;
-  margin: auto;
+  margin: 0 200px;
   margin-bottom: 100px;
 }
 
 .projects{
   display: grid;
-  grid-template-columns: 300px 300px 300px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 32px;
 }
 
@@ -124,7 +127,7 @@ footer{
 }
 
 .contact-pic > img{
-  width: 600px;
+  width: 400px;
 }
 
 .contact-info{
@@ -142,3 +145,66 @@ footer{
   gap: 20px;
 }
 
+@media (max-width: 1000px){
+  .header{
+    padding: 25px 50px;
+  }
+
+  .portrait{
+    width: 250px;
+  }
+
+  .portrait > img{
+    width: 250px;
+  }
+
+  .portrait > p{
+    font-size: 40px;
+  }
+
+  .contact-pic > img{
+    width: 300px;
+  }
+}
+
+@media (max-width: 750px){
+  header{
+    padding: 0;
+  }
+
+  .presentation{
+    gap: 0;
+  }
+
+  .portrait{
+    margin: 20px 20px;
+  }
+
+  .portrait > img{
+    border-radius: 0;
+  }
+
+  .about > h1{
+    text-align: center;
+  }
+
+  main{
+    margin: 0 20px;
+  }
+
+  main > h1{
+    text-align: center;
+  }
+
+  .presentation{
+    flex-direction: column;
+  }
+
+  footer{
+    flex-direction: column;
+  }
+
+  .contact-icons{
+    align-self: center;
+  }
+}
